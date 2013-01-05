@@ -6,7 +6,7 @@
   <div class="toolbar" data-hook="toolbar">
     <ul class="actions header-action-links inline-menu">
       <li id="new_upload_link">
-        <%= button_link_to t(".new_upload"), new_admin_upload_url, { :remote => true, :icon => 'icon-plus', :id => 'new_image_link' } %>
+        <%= button_link_to t(".new_upload"), new_admin_upload_url, { :icon => 'icon-plus', :id => 'new_image_link' } %>
       </li>
     </ul>
   </div>
@@ -45,6 +45,13 @@
 <%# end %>
 -->
 <table class="index responsive" id="listing_uploads" data-hook>
+  <colgroup>
+    <col style="width: 10%">
+    <col style="width: 20%">
+    <col style="width: 40%">
+    <col style="width: 10%">
+    <col style="width: 10%">
+  </colgroup>
   <thead>
     <tr data-hook="admin_uploads_index_headers">
       <th><%= t("thumbnail") %></th>
@@ -70,7 +77,6 @@
         &nbsp;
         <%= link_to_delete upload, :no_text => true %>
       </td>
-      <td class="actions">
     </tr>
   <% end %>
   </tbody>
