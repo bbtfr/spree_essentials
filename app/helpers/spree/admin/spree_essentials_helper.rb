@@ -6,7 +6,8 @@ module Spree::Admin::SpreeEssentialsHelper
   
   def contents_tab
     content_tag :li, :class => inside_contents_tab? ? 'selected' : nil do
-      link_to I18n.t('spree.admin.shared.contents_tab.content'), extension_routes.first
+      link_to I18n.t('spree.admin.shared.contents_tab.content'), extension_routes.first, 
+        :class => 'icon_link with-tip icon-th-list'
     end
   end
   

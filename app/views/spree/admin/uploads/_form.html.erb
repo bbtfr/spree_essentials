@@ -1,8 +1,15 @@
-<p>
-  <%= form.label :attachment %>:<br/>
-  <%= form.file_field :attachment %>
-</p>
-<p>
-  <%= form.label :alt, t('description') %>:<br/>
-  <%= form.text_field :alt, :class => 'text' %>
-</p>
+<div data-hook="admin_upload_form_fields">
+  <%= f.field_container :attachment do %>
+    <%= f.label :attachment %>:<br/>
+    <%= f.file_field :attachment %>
+    <%= f.error_message_on :attachment %>
+  <% end %>
+
+  <%= f.field_container :alt do %>
+    <%= f.label :alt, t('description') %>:<br/>
+    <%= f.text_field :alt, :class => 'fullwidth text' %>
+    <%= f.error_message_on :alt %>
+  <% end %>
+
+  <div class="clear"></div>
+</div>
