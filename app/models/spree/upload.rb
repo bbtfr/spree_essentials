@@ -4,8 +4,8 @@ class Spree::Upload < ::Spree::Asset
   
   default_scope where(:type => "Upload") if table_exists?
   
-  validate :no_attachement_errors
-  
+  validates_attachment_presence :attachment
+
   has_attached_file :attachment,
     :styles        => Proc.new{ |clip| clip.instance.attachment_sizes },
     :default_style => :medium,
@@ -17,20 +17,9 @@ class Spree::Upload < ::Spree::Asset
   end
      
   def attachment_sizes
-    if image_content?
-      { :mini => '48x48>', :small => '150x150>', :medium => '420x300>', :large => '800x500>' }
-    else
-      {}
-    end
+    hash = {}
+    hash.merge!(:mini => '48x48>', :small => '150x150>', :medium => '600x600>', :large => '950x700>') if image_content?
+    hash
   end
   
-  def no_attachement_errors
-    if attachment_file_name.blank? || !attachment.errors.empty?
-      # uncomment this to get rid of the less-than-useful interrim messages
-      errors.clear
-      errors.add :attachment, "Paperclip returned errors for file '#{attachment_file_name}' - check ImageMagick installation or image source file."
-      false
-    end
-  end
-
 end
