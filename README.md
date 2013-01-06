@@ -26,6 +26,12 @@ If you don't already have an existing Spree site, [click here](https://gist.gith
 Spree Essentials can be installed by itself by adding the following to your Gemfile:
     
 ```ruby
+# Spree 1.3.x
+gem 'spree_essentials', :git => 'git://github.com/bbtfr/spree_essentials.git', :branch => '1.3.x'
+
+# Spree 1.2.x
+gem 'spree_essentials', :git => 'git://github.com/bbtfr/spree_essentials.git', :branch => '1.2.x'
+
 # Spree 1.1.x
 gem 'spree_essentials', '~> 0.5.0'
 
@@ -214,6 +220,13 @@ To Do
 ------------------------------------------------------------------------------
 Change Log
 ------------------------------------------------------------------------------
+
+**0.50.0 - 2012/5/1**
+
+* Depend on Spree 1.3.0 
+* Text editor turn to redactor
+* Release v0.70.0
+
 
 **0.50.0 - 2012/5/1**
 
