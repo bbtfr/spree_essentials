@@ -1,0 +1,1 @@
+<%= raw @uploads.reduce([]){|r,u|if u.image_content? then r<<{thumb:u.attachment.url(:mini),image:u.attachment.url(:original),title:u.alt} else r end }.to_json %>
