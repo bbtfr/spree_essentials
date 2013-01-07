@@ -24,6 +24,7 @@ class Spree::Admin::UploadsController < Spree::Admin::ResourceController
       respond_with(@object)
     end
   end
+  
   private
 
     def collection
