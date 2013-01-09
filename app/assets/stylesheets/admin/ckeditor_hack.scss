@@ -1,0 +1,23 @@
+.cke {
+  .picker {
+    list-style-type: none;
+    li {
+      float: left;
+      width: 50px;
+      padding: 5px;
+    }
+  }
+}
+
+.cke_dialog * {
+  white-space: normal!important;
+}
+
+.cke_panel_frame {
+  height: 105%!important;
+}
+
+select.cke_dialog_ui_input_select {
+  height: 22px!important;
+  padding: 0!important;
+}

@@ -1,2 +1,2 @@
-//= require redactor-rails
+//= require ckeditor/ckeditor
 //= require_tree .
