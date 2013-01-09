@@ -28,8 +28,12 @@
   }
 }
 
-.cke_reset_all, .cke_reset_all * {
+.cke_dialog * {
   white-space: normal!important;
+}
+
+.cke_panel_frame {
+  height: 105%!important;
 }
 
 select.cke_dialog_ui_input_select {

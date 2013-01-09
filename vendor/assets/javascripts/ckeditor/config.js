@@ -9,9 +9,9 @@ CKEDITOR.editorConfig = function( config ) {
   // config.uiColor = '#AADC6E';
 
   /* Filebrowser routes */
+  config.fileinlinebrowserBrowseUrl = "/admin/ckeditor_uploads";
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
   // config.filebrowserBrowseUrl = "/admin/ckeditor_uploads?type=file";
-  config.fileinlinebrowserBrowseUrl = "/admin/ckeditor_uploads";
   
   // The location of a script that handles file uploads.
   config.filebrowserUploadUrl = "/admin/ckeditor_uploads";
@@ -102,11 +102,13 @@ CKEDITOR.editorConfig = function( config ) {
       dialog = dialogDefinition.dialog;
       dialog.on('load', function( ev ){
         console.log('load '+dialogName+' uploads');
+        dialog.hidePage( 'Link' ); //Hide Link tab.
 
         $("#display_"+dialogName+"_uploads")
         .load(config.addQueryString(config.fileinlinebrowserBrowseUrl, {type:dialogName}))
         .on('click', 'a.image', function(ev) {
-          updateTargetElement(this.href, dialog.getContentElement('Upload', 'upload'));
+          var upload = dialog.getContentElement('Upload', 'upload') || dialog.getContentElement('upload', 'upload');
+          config.updateTargetElement(this.href, upload);
           return false;
         });
       });
@@ -123,7 +125,21 @@ CKEDITOR.editorConfig = function( config ) {
       }
     }
   });
+  /* Toolbars */
+  config.toolbar = 'Easy';
+
+  config.toolbar_Easy =
+    [
+        ['Source'],
+        ['Cut','Copy','Paste','PasteText','PasteFromWord'],
+        ['Undo','Redo'],
+        ['Table','HorizontalRule','SpecialChar'],
+        ['Link','Unlink','Image','Flash'],
+        ['Maximize'], '/',
+        ['Bold','Italic','Strike','-','TextColor','BGColor','-','RemoveFormat'], 
+        ['Styles','Format'], 
+        ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+        ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+    ];
 };
 
-
-var debug;
