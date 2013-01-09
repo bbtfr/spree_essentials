@@ -1,0 +1,38 @@
+.cke {
+  * {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+  }
+
+  table tbody tr:hover td {
+    background-color: initial;
+  }
+
+  table tbody tr:first-child td {
+    border-top: initial;
+    border-left: initial;
+  }
+
+  table tbody tr:hover td img {
+    border: none;
+  }
+
+  .picker {
+    list-style-type: none;
+    li {
+      float: left;
+      width: 50px;
+      padding: 5px;
+    }
+  }
+}
+
+.cke_reset_all, .cke_reset_all * {
+  white-space: normal!important;
+}
+
+select.cke_dialog_ui_input_select {
+  height: 22px!important;
+  padding: 0!important;
+}
