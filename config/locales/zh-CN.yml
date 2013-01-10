@@ -1,0 +1,26 @@
+zh-CN:
+
+  successfully_created: "%{resource} 创建成功！"
+  successfully_removed: "%{resource} 删除成功！"
+  successfully_updated: "%{resource} 更新成功！"
+  
+  essentials:
+    parsed_with: 解析引擎
+
+  activerecord:
+    attributes:
+      order:
+        completed_at: 完成于
+    errors:
+      messages:
+        invalid_date_time: 是不合法的日期。
+           
+  # spree hack  
+  # first_name_start: "First Name starts with"
+  # last_name_start: "Last Name starts with"
+  
+  spree:
+    admin:
+      shared:
+        contents_tab:
+          content: 内容管理
